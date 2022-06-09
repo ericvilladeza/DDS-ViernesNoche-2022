@@ -1,8 +1,8 @@
 package quemepongo;
+
 import java.util.*;
 
-public final class AccuWeatherAPI {
-
+public final class AccuWeatherApi {
     public final List<Map<String, Object>> getWeather(String ciudad) {
         return Arrays.asList(new HashMap<String, Object>(){{
             put("DateTime", "2019-05-03T01:00:00-03:00");
@@ -20,4 +20,5 @@ public final class AccuWeatherAPI {
             }});
         }});
     }
+
 }

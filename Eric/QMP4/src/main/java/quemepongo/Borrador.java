@@ -1,5 +1,9 @@
 package quemepongo;
 
+import quemepongo.PrendaEstado.*;
+
+import java.util.Set;
+
 import static java.util.Objects.requireNonNull;
 
 public class Borrador {
@@ -8,6 +12,10 @@ public class Borrador {
   private Color colorPrimario;
   private Color colorSecundario;
   private Trama trama;
+  private Set<Integer> temperaturas;
+  private Estado estado = new Nueva();
+  private boolean lavando=false;
+
 
   public Borrador() {
     this.trama = Trama.LISA;
@@ -39,7 +47,7 @@ public class Borrador {
 
   public Prenda crearPrenda() {
     this.validarPrenda();
-    return new Prenda(tipoDePrenda, material, colorPrimario, colorSecundario, trama);
+    return new Prenda(tipoDePrenda, material, colorPrimario, colorSecundario, trama, temperaturas, estado, lavando);
   }
 
   private void validarPrenda() {
